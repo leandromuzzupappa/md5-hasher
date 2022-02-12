@@ -1,13 +1,10 @@
-const crypto = require("crypto");
+const { toMd5Hash } = require("../utils/stringUtils");
 
 const mainControllers = {
   index: (req, res) => res.render("pages/home"),
   results: (req, res) => {
     const { str: stringToHash } = req.query;
-    const hashedText = crypto
-      .createHash("md5")
-      .update(stringToHash)
-      .digest("hex");
+    const hashedText = toMd5Hash(stringToHash);
 
     res.render("pages/home", { hashedText });
   },
