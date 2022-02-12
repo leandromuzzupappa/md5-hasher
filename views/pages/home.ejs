@@ -1,3 +1,5 @@
+<% const hashedText = locals.hashedText; %>
+
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -6,7 +8,7 @@
   <body>
     <main>
       <section>
-        <form action="#aaaaa">
+        <form action="/results">
           <label for="str">Texto a hashear (MD5)</label>
           <input
             type="text"
@@ -17,12 +19,12 @@
           <button>Hashear</button>
         </form>
 
+        <% if (hashedText) { %>
         <div class="results">
           <h4>Este es tu texto hasheado:</h4>
-          <p>
-            dsadsadsadsadsdadsadsadsadsadsdadsadsadsadsadsdadsadsadsadsadsdadsadsadsadsadsda
-          </p>
+          <p><%= hashedText %></p>
         </div>
+        <% } %>
       </section>
     </main>
   </body>
