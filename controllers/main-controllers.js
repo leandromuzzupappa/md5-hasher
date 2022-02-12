@@ -1,5 +1,5 @@
 const mainControllers = {
-  index: (req, res) => res.send("Lenny was here overloaded"),
+  index: (req, res) => res.render("pages/home"),
 };
 
 module.exports = mainControllers;
